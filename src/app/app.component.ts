@@ -13,6 +13,6 @@ export class AppComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {
-    this.title = 'Scrimba.FirstAngularApp on laptop';
+    this.title = 'Scrimba.FirstAngularApp';
   }
 }
