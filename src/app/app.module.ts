@@ -6,6 +6,7 @@ import { CoreModule } from './core/core.module';
 import { SharedModule } from  './shared/shared.module';
 import { CustomersModule } from './customers/customers.module';
 import { AppRoutingModule } from './app-routing.module';
+import { OrdersModule } from './orders/orders.module';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { AppRoutingModule } from './app-routing.module';
     CoreModule,
     SharedModule,
     CustomersModule,
+    OrdersModule,
     AppRoutingModule
   ],
   providers: [],
