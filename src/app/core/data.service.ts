@@ -20,18 +20,18 @@ export class DataService {
             );
     }
     
-    getCustomer(id: number) : Observable<ICustomer | null> {
+    getCustomer(id: number) : Observable<ICustomer> {
       return this.http.get<ICustomer[]>(this.baseUrl + 'customers.json')
         .pipe(
           map(customers => {
             let customer = customers.filter((cust: ICustomer) => cust.id === id);
-            return (customer && customer.length) ? customer[0] : null;
+            return (customer && customer.length) ? customer[0] : {} as ICustomer;
           }),
           catchError(this.handleError)
         )
     }
 
-    getOrders(id: number) : Observable<IOrder[]> {
+    getOrders(id: number | null) : Observable<IOrder[]> {
       return this.http.get<IOrder[]>(this.baseUrl + 'orders.json')
         .pipe(
           map(orders => {
