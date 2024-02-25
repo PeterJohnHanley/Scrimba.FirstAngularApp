@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
 import { map, catchError } from 'rxjs/operators';
 
 import { ICustomer, IOrder } from '../../app/shared/interfaces';
@@ -20,7 +20,7 @@ export class DataService {
             );
     }
     
-    getCustomer(id: number) : Observable<ICustomer> {
+    getCustomer(id: number) : Observable<ICustomer | null> {
       return this.http.get<ICustomer[]>(this.baseUrl + 'customers.json')
         .pipe(
           map(customers => {
